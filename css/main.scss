@@ -1,0 +1,344 @@
+* {
+  box-sizing: border-box;
+}
+
+// variables
+$container: 1200px;
+$textFont-size: 1rem; // 16px
+
+// layout
+.container {
+  max-width: $container;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+section {
+  padding: 15px 0;
+}
+
+a,
+button {
+  transition: 0.3s ease-in;
+  transition-property: color, background-color, opacity;
+}
+
+a {
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: currentColor;
+  }
+}
+
+button,
+.button {
+  cursor: pointer;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+}
+
+.people_icon {
+  width: 24px;
+  height: 24px;
+}
+
+.cart_icon {
+  width: 25px;
+  height: 23px;
+}
+
+.dropdown_icon {
+  width: 10.44px;
+  height: 6.40px;
+  fill: none;
+  stroke: #666;
+  stroke-width: 1px;
+  fill-rule: evenodd;
+
+  &_buy {
+    stroke: #fff;
+  }
+}
+
+.menu_icon {
+  width: 42px;
+  height: 42px;
+
+  &:hover {
+    fill: #ee3346;
+    stroke: #ee3346;
+
+  }
+}
+
+.arrow_icon {
+  width: 15px;
+  height: 5px;
+}
+
+.header {
+  background-color: #f0f3f8;
+  min-height: 42px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 9;
+
+  &_menu {
+    list-style: none;
+    color: #999b9c;
+
+    &_item+&_item {
+      margin-left: 30px;
+    }
+  }
+}
+
+.header_main {
+  &_container {
+    padding: 60px 0 30px 0;
+  }
+
+  &_link {
+    &>span {
+      margin-left: 10px;
+      font-size: 28px;
+      font-weight: 300;
+      color: #363636;
+
+      &:hover,
+      &:focus {
+        color: #ee3346;
+      }
+    }
+  }
+
+  &_contacts {
+    font-weight: 300;
+    color: #363636;
+
+    &_title {
+      text-decoration: underline;
+
+      &:hover,
+      &:focus {
+        color: #ee3346;
+      }
+    }
+
+    &_item {
+
+      &:hover,
+      &:focus {
+        color: #ee3346;
+      }
+    }
+  }
+}
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -5px;
+  transform: translateX(-100%);
+  width: 100%;
+  height: 1px;
+  display: inline-block;
+  background-color: #f34949;
+  transition: height 0.5s, transform 1.5s;
+  transition-timing-function: cubic-bezier(0.42, 0, 0, 1.12), cubic-bezier(0.42, 0, 0, 1.12);
+}
+
+.nav-item {
+  overflow: hidden;
+  padding-top: 5px;
+  font-size: 1rem;
+}
+
+.nav-link:hover:after,
+.nav-link:focus:after {
+  transform: translateX(0);
+  height: 2px;
+}
+
+.menu_breadcrumb {
+  &_nav {
+    padding: 25px 0;
+  }
+
+  &_item+&_item {
+    margin-left: 10px;
+  }
+
+  &_item>a {
+    color: #666666;
+
+    &:hover,
+    &:focus {
+      color: #ee3346;
+    }
+  }
+
+  &_active>a {
+    color: #000;
+  }
+}
+
+.product {
+  &_title {
+    font-size: 30px;
+  }
+
+  &_uid {
+    font-size: 14px;
+    color: #999b9c;
+  }
+}
+
+.product {
+  &_buying_info {
+    color: #ee3346;
+    font-size: 35px;
+    padding: 35px 0;
+  }
+
+  &_price_currency {
+    font-size: 28px;
+    font-weight: 300;
+  }
+
+  &_buy_btn {
+    border-radius: 10px;
+    padding: 10px 25px;
+
+    &>span {
+      margin-right: 30px;
+    }
+
+    &:hover,
+    &:active {
+      background-color: #999b9c;
+      border: 1px solid #000;
+    }
+  }
+}
+
+.aside {
+  &_btn {
+    background-color: transparent;
+    border: 1px solid #000;
+    border-radius: 10px;
+    padding: 10px 25px;
+
+    &:hover,
+    &:active {
+      background-color: #999b9c;
+      color: #fff;
+      border: 1px solid #000;
+    }
+  }
+
+  &_title {
+    margin: 30px 0;
+  }
+
+  &_menu {
+    display: none;
+
+    &_item {
+      font-size: 14px;
+
+      &:hover,
+      &:focus {
+        color: #ee3346;
+      }
+    }
+
+    &_item+&_item {
+      margin-top: 10px;
+    }
+  }
+
+  &_rotate {
+    transform: rotate(180deg);
+  }
+
+}
+
+.tabs-wrapper {
+  max-width: 100%;
+  margin: 50px auto;
+  padding: 25px;
+}
+
+.tabs {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+
+  & li:not(:last-child) {
+    margin-right: 7px;
+  }
+
+  & li a {
+    display: block;
+    position: relative;
+    top: 4px;
+    padding: 10px 25px;
+    border-radius: 2px 2px 0 0;
+    background: #fff;
+    opacity: 0.7;
+    transition: all 0.1s ease-in-out;
+  }
+
+  & li.active a,
+  & li a:hover {
+    opacity: 1;
+    color: #ee3346;
+    top: 0;
+    border-bottom: solid #ee3346 1px;
+  }
+
+  &-content {
+    position: relative;
+    z-index: 2;
+    padding: 25px;
+    border-radius: 0 4px 4px 4px;
+    background: #fff;
+  }
+
+  &-panel {
+    display: none;
+  }
+
+  &-panel.active {
+    display: block;
+  }
+
+  &-panel p+div {
+    margin-top: 15px;
+  }
+}
+
+@import "slick.scss";
+@import "slick-theme.scss";
+
+
